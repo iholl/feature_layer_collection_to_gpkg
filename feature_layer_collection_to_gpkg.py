@@ -1,10 +1,11 @@
 import json
 import arcgis
 import geopandas as gpd
+from decouple import config
 
 PORTAL_URL = "https://ndow.maps.arcgis.com"
-PORTAL_USERNAME = ""
-PORTAL_PASSWORD = ""
+PORTAL_USERNAME = config('ARCGIS_ONLINE_USERNAME')
+PORTAL_PASSWORD = config('ARCGIS_ONLINE_PASSWORD')
 
 feature_layer_collection_id = "8728c607a7064c7a9a47793d3bd03cd2"
 gis = arcgis.GIS(PORTAL_URL, PORTAL_USERNAME, PORTAL_PASSWORD)
